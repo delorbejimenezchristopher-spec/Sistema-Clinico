@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ejercicio 6.8 - Modelo de caja tradicional</title>
+</head>
+<body>
+    <!-- Libro pag. 158: cada seccion se envuelve en un <div> para centrar su contenido -->
+    <header id="cabeceralogo">
+        <div>
+            <h1>Mi Blog de Practicas</h1>
+        </div>
+    </header>
+
+    <nav id="menuprincipal">
+        <div>
+            <ul>
+                <li><a href="#">Principal</a></li>
+                <li><a href="#">Fotos</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div>
+            <section id="articulosprincipales">
+                <article>
+                    <h1>Aprendiendo float</h1>
+                    <time datetime="2026-10-15">
+                        <div class="numerodia">15</div>
+                        <div class="nombredia">Jueves</div>
+                    </time>
+                    <p>Con float podemos colocar elementos uno al lado del otro. La seccion de articulos flota a la izquierda y el aside a la derecha.</p>
+                    <figure class="imagen">Imagen</figure>
+                </article>
+                <article>
+                    <h1>El selector universal</h1>
+                    <time datetime="2026-10-08">
+                        <div class="numerodia">8</div>
+                        <div class="nombredia">Jueves</div>
+                    </time>
+                    <p>La regla * con margin y padding en 0 resetea los estilos que el navegador pone por defecto.</p>
+                    <figure class="imagen">Imagen</figure>
+                </article>
+            </section>
+
+            <aside id="infoadicional">
+                <h1>Informacion Personal</h1>
+                <p>Cita del articulo uno</p>
+                <p>Cita del articulo dos</p>
+            </aside>
+
+            <!-- clear: both hace que el contenedor envuelva a los elementos flotantes -->
+            <div class="recuperar"></div>
+        </div>
+    </main>
+
+    <footer id="pielogo">
+        <div>
+            <section class="seccionpie">
+                <h1>Sitio Web</h1>
+                <p><a href="#">Principal</a></p>
+                <p><a href="#">Fotos</a></p>
+                <p><a href="#">Videos</a></p>
+            </section>
+            <section class="seccionpie">
+                <h1>Ayuda</h1>
+                <p><a href="#">Contacto</a></p>
+            </section>
+            <section class="seccionpie">
+                <address>Santo Domingo, Republica Dominicana</address>
+                <small>&copy; Derechos Reservados 2026</small>
+            </section>
+            <div class="recuperar"></div>
+        </div>
+    </footer>
+</body>
+</html>

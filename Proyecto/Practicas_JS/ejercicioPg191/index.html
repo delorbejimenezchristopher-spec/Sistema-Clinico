@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ejercicio 6.9 - Modelo de caja flexible</title>
+</head>
+<body>
+    <!-- Libro pag. 191: la misma pagina del 6.8 pero con flexbox.
+         Ya no hacen falta los <div> que envolvian el contenido ni los .recuperar -->
+    <header id="cabeceralogo">
+        <h1>Mi Blog de Practicas</h1>
+    </header>
+
+    <nav id="menuprincipal">
+        <ul>
+            <li><a href="#">Principal</a></li>
+            <li><a href="#">Fotos</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="articulosprincipales">
+            <article>
+                <h1>Aprendiendo flexbox</h1>
+                <time datetime="2026-10-15">
+                    <div class="numerodia">15</div>
+                    <div class="nombredia">Jueves</div>
+                </time>
+                <p>Con display: flex los elementos se colocan en fila automaticamente. Con flex: 1 una caja ocupa todo el espacio que sobra.</p>
+                <figure class="imagen">Imagen</figure>
+            </article>
+            <article>
+                <h1>Adios a float</h1>
+                <time datetime="2026-10-08">
+                    <div class="numerodia">8</div>
+                    <div class="nombredia">Jueves</div>
+                </time>
+                <p>Ya no necesitamos clear: both para que el contenedor envuelva a sus hijos.</p>
+                <figure class="imagen">Imagen</figure>
+            </article>
+        </section>
+
+        <aside id="infoadicional">
+            <h1>Informacion Personal</h1>
+            <p>Cita del articulo uno</p>
+            <p>Cita del articulo dos</p>
+        </aside>
+    </main>
+
+    <footer id="pielogo">
+        <section class="seccionpie">
+            <h1>Sitio Web</h1>
+            <p><a href="#">Principal</a></p>
+            <p><a href="#">Fotos</a></p>
+            <p><a href="#">Videos</a></p>
+        </section>
+        <section class="seccionpie">
+            <h1>Ayuda</h1>
+            <p><a href="#">Contacto</a></p>
+        </section>
+        <section class="seccionpie">
+            <address>Santo Domingo, Republica Dominicana</address>
+            <small>&copy; Derechos Reservados 2026</small>
+        </section>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario por pasos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="inicio">
+    <h1>Formulario de solicitud</h1>
+    <p>Completa la información paso a paso.</p>
+    <button type="button" class="btn btn-principal" id="abrir">Comenzar</button>
+    <p class="mensaje" id="mensaje" hidden></p>
+  </main>
+
+  <dialog id="popup">
+    <form id="formulario" novalidate>
+
+      <header class="cabecera">
+        <div class="cabecera-arriba">
+          <span id="contador">Paso 1 de 4</span>
+          <button type="button" class="btn-cerrar" id="cerrar">&times;</button>
+        </div>
+
+        <ol class="circulos">
+          <li class="circulo">1</li>
+          <li class="circulo">2</li>
+          <li class="circulo">3</li>
+          <li class="circulo">4</li>
+        </ol>
+      </header>
+
+      <div class="cuerpo">
+
+        <fieldset class="paso">
+          <legend>Datos personales</legend>
+          <label>Nombre <input type="text" name="nombre" required></label>
+          <label>Apellido <input type="text" name="apellido" required></label>
+          <div class="fila">
+            <label>Cédula <input type="text" name="cedula" placeholder="000-0000000-0" required></label>
+            <label>Fecha de nacimiento <input type="date" name="nacimiento" required></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="paso">
+          <legend>Contacto</legend>
+          <label>Correo electrónico <input type="email" name="email" required></label>
+          <label>Teléfono <input type="tel" name="telefono" placeholder="809-000-0000" required></label>
+          <label>Medio de contacto preferido
+            <select name="contacto" required>
+              <option value="">Selecciona...</option>
+              <option>Correo</option>
+              <option>Teléfono</option>
+              <option>WhatsApp</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <fieldset class="paso">
+          <legend>Dirección</legend>
+          <label>Calle y número <input type="text" name="calle" required></label>
+          <div class="fila">
+            <label>Sector <input type="text" name="sector" required></label>
+            <label>Provincia <input type="text" name="provincia" required></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="paso">
+          <legend>Detalles</legend>
+          <label>Tipo de solicitud
+            <select name="tipo" required>
+              <option value="">Selecciona...</option>
+              <option>Cotización</option>
+              <option>Reclamación</option>
+              <option>Información general</option>
+            </select>
+          </label>
+          <label>Comentarios <span class="opcional">(opcional)</span>
+            <textarea name="comentarios" rows="4"></textarea>
+          </label>
+          <label class="casilla">
+            <input type="checkbox" name="acepto" required>
+            Confirmo que la información es correcta
+          </label>
+        </fieldset>
+
+        <p class="aviso" id="aviso" hidden>Completa los campos marcados en rojo.</p>
+      </div>
+
+      <footer class="pie">
+        <button type="button" class="btn btn-secundario" id="anterior">Anterior</button>
+        <button type="button" class="btn btn-principal" id="siguiente">Siguiente</button>
+        <button type="submit" class="btn btn-principal" id="enviar">Enviar</button>
+      </footer>
+
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

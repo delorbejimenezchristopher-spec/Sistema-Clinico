@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ejercicio 6.3</title>
+</head>
+<body>
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1>Crea tu propia criatura!!</h1>
+                <form id="formulario">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Nombre de la criatura" required>
+
+                    <label for="raza">Raza</label>
+                    <input type="text" id="raza" placeholder="Nombre de la raza" required>
+
+                    <label for="habilidad">Habilidad</label>
+                    <input type="text" id="habilidad" placeholder="Nombre de la habilidad" required>
+
+                    <label for="salud">Puntos de salud</label>
+                    <input type="number" id="salud" placeholder="¿Cuanta salud tendra?" max="100" min="0" required>
+
+                    <button type="submit" id="btn">Crear tu criatura</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

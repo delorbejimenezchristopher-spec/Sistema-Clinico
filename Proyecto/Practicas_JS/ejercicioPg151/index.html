@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ejercicio 6.7 - Posicionamiento</title>
+</head>
+<body>
+    <main>
+        <h1>Posicionamiento relativo y absoluto</h1>
+        <p class="nota">Libro pag. 151 - Elige un tipo de posicion para la <strong>caja-1</strong> y mira como se mueve.</p>
+
+        <!-- Botones para cambiar la propiedad "position" de caja-1 -->
+        <div id="controles">
+            <button data-posicion="static">static</button>
+            <button data-posicion="relative">relative</button>
+            <button data-posicion="absolute">absolute</button>
+        </div>
+
+        <p id="explicacion"></p>
+
+        <!-- cajapadre tiene position: relative, asi caja-1 en modo absolute se ubica respecto a ella -->
+        <section id="cajapadre">
+            <div id="caja-1">Caja 1</div>
+            <div id="caja-2">Caja 2</div>
+            <div id="caja-3">Caja 3</div>
+            <div id="caja-4">Caja 4</div>
+        </section>
+
+        <!-- Ejemplo real de position absolute: una etiqueta encima de una tarjeta -->
+        <section class="tarjeta">
+            <span class="etiqueta">Nuevo</span>
+            <h2>Tarjeta de producto</h2>
+            <p>La etiqueta "Nuevo" usa position: absolute dentro de una tarjeta con position: relative.</p>
+        </section>
+    </main>
+
+    <!-- position: fixed se queda pegado a la ventana aunque hagas scroll -->
+    <a href="#" id="boton-fijo">Subir</a>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+/* Paleta de colores (verde).
+   Para usar naranja cambia:
+   --principal: #ea580c;  --principal-oscuro: #c2410c;  --principal-suave: #ffedd5; */
+:root {
+  --principal: #16a34a;
+  --principal-oscuro: #15803d;
+  --principal-suave: #dcfce7;
+  --texto: #1d2433;
+  --gris: #667085;
+  --borde: #d0d5dd;
+  --fondo: #f4f6f5;
+  --blanco: #ffffff;
+  --error: #d92d20;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+}
+
+/* ---------- Página de inicio ---------- */
+.inicio {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+}
+
+.inicio h1 {
+  margin: 0 0 8px;
+}
+
+.inicio p {
+  color: var(--gris);
+  margin: 0 0 24px;
+}
+
+.inicio .mensaje {
+  margin-top: 24px;
+  color: var(--principal);
+  font-weight: 600;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-principal {
+  background: var(--principal);
+  color: var(--blanco);
+}
+
+.btn-principal:hover {
+  background: var(--principal-oscuro);
+}
+
+.btn-secundario {
+  background: var(--blanco);
+  color: var(--texto);
+  border-color: var(--borde);
+}
+
+.btn-secundario:hover {
+  background: var(--fondo);
+}
+
+.btn-cerrar {
+  background: none;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--gris);
+  cursor: pointer;
+}
+
+.btn-cerrar:hover {
+  color: var(--texto);
+}
+
+/* ---------- Ventana emergente ---------- */
+dialog {
+  width: 100%;
+  max-width: 520px;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+dialog[open] {
+  animation: aparecer 0.25s ease;
+}
+
+dialog::backdrop {
+  background: rgba(16, 24, 40, 0.55);
+}
+
+.cabecera {
+  padding: 20px 24px 0;
+}
+
+.cabecera-arriba {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#contador {
+  font-size: 13px;
+  color: var(--gris);
+}
+
+.cuerpo {
+  padding: 20px 24px;
+}
+
+.pie {
+  display: flex;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--borde);
+}
+
+/* Siguiente y Enviar siempre a la derecha */
+#siguiente,
+#enviar {
+  margin-left: auto;
+}
+
+/* ---------- Círculos de pasos ---------- */
+.circulos {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+/* Línea gris detrás de los círculos */
+.circulos::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--borde);
+}
+
+.circulo {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  background: var(--blanco);
+  border: 2px solid var(--borde);
+  color: var(--gris);
+  transition: all 0.3s;
+}
+
+/* Círculo encendido */
+.circulo.activo {
+  background: var(--principal);
+  border-color: var(--principal);
+  color: var(--blanco);
+  box-shadow: 0 0 0 4px var(--principal-suave);
+}
+
+/* ---------- Pasos ---------- */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.paso {
+  animation: entrar 0.25s ease;
+}
+
+legend {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+/* ---------- Campos ---------- */
+label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.opcional {
+  font-weight: 400;
+  color: var(--gris);
+}
+
+.fila {
+  display: flex;
+  gap: 12px;
+}
+
+.fila label {
+  flex: 1;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  font: inherit;
+  font-weight: 400;
+  color: var(--texto);
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--principal);
+  box-shadow: 0 0 0 3px var(--principal-suave);
+}
+
+/* Borde rojo cuando el campo tiene un error */
+input:user-invalid,
+select:user-invalid {
+  border-color: var(--error);
+}
+
+.casilla {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.casilla input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--principal);
+}
+
+/* ---------- Animaciones ---------- */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 480px) {
+  .fila {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cabecera,
+  .cuerpo,
+  .pie {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

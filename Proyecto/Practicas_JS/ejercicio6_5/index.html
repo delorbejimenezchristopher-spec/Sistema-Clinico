@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ejercicio 6.5 - Manejo de eventos</title>
+</head>
+<body>
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1>Ingresa un numero!!</h1>
+
+                <form id="formulario">
+                    <label for="numero">Tu numero magico</label>
+                    <input type="number" placeholder="Dame el numero que mas te guste" id="numero">
+
+                    <button type="submit" id="btn">Crear tu criatura</button>
+                </form>
+
+                <!-- Aqui se muestra lo que el usuario escribe (evento "input") -->
+                <p id="vista-previa">Escribiendo: </p>
+
+                <!-- Aqui se muestra el resultado (evento "submit") -->
+                <p id="resultado"></p>
+
+                <!-- Caja para probar eventos del mouse -->
+                <div id="caja">
+                    Pasa el mouse por aqui
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
